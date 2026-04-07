@@ -28,7 +28,8 @@
             </div>
 
             <div>
-                <!-- Myla's About -->
+                 <h2>Myla</h2>
+                 <p>My name is Myla Vencill, and I am a senior student in Computer Science at Colorado State University. I enjoy reading, video games, and hiking in my free time.</p>
             </div>
 
             <div>
