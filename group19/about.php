@@ -19,7 +19,8 @@
         </header>
 
             <div>
-                <!-- Anna's About -->
+                <h2>Anna</h2>
+                <p>Senior in computer science with a minor in mathematics at CSU. A few of my hobbies include snowboarding, gaming, dnd, and boating.</p>
             </div>
 
             <div>
