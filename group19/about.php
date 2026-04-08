@@ -22,6 +22,7 @@
 
     <div>
         <h2>Anna</h2>
+        <img src="img/Anna.jpg">
         <p>Senior in computer science with a minor in mathematics at CSU. A few of my hobbies include snowboarding,
             gaming, dnd, and boating.</p>
     </div>
