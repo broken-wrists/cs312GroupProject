@@ -56,6 +56,18 @@
     }
     ?>
 
+    <form method="post" action="color.php">
+        <label for="gridsize"> Rows and Columns (1-26):</label>
+        <input type="number" name="grid_size" id="gridsize">
+        <br><br>
+
+        <label for="num_colors"> Number Of Colors (1-10): </label>
+        <input type="number" name="numColors" id="numColors">
+        <br><br>
+
+        <button type="submit" name="generate">Generate</button>
+    </form>
+    <div id="color-message" class="color-message"></div>
     <?php
     $num_colors = 0;
     $colorOptions = array("Red", "Orange", "Yellow", "Green", "Blue", "Purple", "Grey", "Brown", "Black", "Teal");
@@ -88,23 +100,10 @@
     }
     ?>
 
-
-    <form method="post" action="color.php">
-        <label for="gridsize"> Rows and Columns (1-26):</label>
-        <input type="number" name="grid_size" id="gridsize">
-        <br><br>
-
-        <label for="num_colors"> Number Of Colors (1-10): </label>
-        <input type="number" name="numColors" id="numColors">
-        <br><br>
-
-        <button type="submit" name="generate">Generate</button>
-
-    </form>
-
-
     <footer>
     </footer>
+    <script type="text/javascript" src="color.js"></script>
+
 </body>
 
 </html>
