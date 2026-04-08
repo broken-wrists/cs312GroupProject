@@ -5,3 +5,30 @@
 	--yellow-green: #b5e48c;
 	--purple: #7209b7;
 }
+
+body {
+	background-color: var(--yellow-orange);
+	margin: 20px;
+	font-family: Arial;
+}
+
+.color-table {
+	width: 95%;
+	border-collapse: collapse;
+}
+
+.color-table td {
+	border: 1px solid black;
+}
+
+.color-table td:first-child {
+	width: 20%;
+}
+
+.color-table td:last-child {
+	width: 80%;
+}
+
+select {
+	width: 100%;
+}
