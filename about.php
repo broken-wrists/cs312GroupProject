@@ -11,7 +11,7 @@
     <nav>
         <ul>
             <li><a href="./index.php">Homepage</a></li>
-            <li><a href="#">About Me</a></li>
+            <li><a href="#">About</a></li>
             <li><a href="./color.php">Color Coordinate Page</a></li>
         </ul>
     </nav>
@@ -22,7 +22,7 @@
 
     <div>
         <h2>Anna</h2>
-        <img src="img/Anna.jpg">
+        <img src="img/Anna.jpg" alt="Anna snowboarding" width="300" heigth="400">
         <p>Senior in computer science with a minor in mathematics at CSU. A few of my hobbies include snowboarding,
             gaming, dnd, and boating.</p>
     </div>
