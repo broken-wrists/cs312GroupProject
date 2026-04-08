@@ -32,3 +32,10 @@ body {
 select {
 	width: 100%;
 }
+
+.color-message {
+	display: none;
+	color: black;
+	border-radius: 5px;
+	width: 95%;
+}
