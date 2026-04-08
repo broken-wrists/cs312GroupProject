@@ -8,16 +8,14 @@
 </head>
 
 <body>
-    <nav>
-        <ul>
-            <li><a href="./index.php">Homepage</a></li>
-            <li><a href="#">About</a></li>
-            <li><a href="./color.php">Color Coordinate Page</a></li>
-        </ul>
-    </nav>
-
     <header>
         <h1>About Page</h1>
+
+        <nav>
+            <a href="index.php">Home</a> |
+            <a href="about.php">About</a> |
+            <a href="color.php">Color</a> 
+        </nav>
     </header>
 
     <div>
