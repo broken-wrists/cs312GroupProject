@@ -14,14 +14,13 @@
 <body>
 
     <header>
+        <h1> Color Coordinator</h1>
+
         <nav>
             <a href="index.php">Home</a> |
             <a href="about.php">About</a> |
             <a href="color.php">Color</a>
         </nav>
-
-        <h1> Color Coordinator</h1>
-
     </header>
 
     <?php
