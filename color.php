@@ -29,7 +29,7 @@
     $num_colors = 0;
     $valid = false;
 
-    if (isset(($_POST['generate']))) {
+    if (isset($_POST['generate'])) {
         $grid_size = $_POST['grid_size'];
         $num_colors = $_POST['numColors'];
 
@@ -65,15 +65,16 @@
         <input type="number" name="numColors" id="numColors">
         <br><br>
 
-        <button type="submit" name="generate">Generate</button>
+        <button type="submit" name="generate">Generate</button>         
     </form>
     <div id="color-message" class="color-message"></div>
+
     <?php
     $num_colors = 0;
     $colorOptions = array("Red", "Orange", "Yellow", "Green", "Blue", "Purple", "Grey", "Brown", "Black", "Teal");
 
 
-    if (isset(($_POST['generate']))) {
+    if (isset($_POST['generate'])) {
         $num_colors = $_POST['numColors'];
 
         echo "<table class='color-table'>";
@@ -97,7 +98,45 @@
             echo "</tr>";
         }
         echo "</table>";
+
+        // 4.4 Bottom Table: Coordinate Grid
+        if($valid_grid){
+            $grid_size = (int) $_POST['grid_size'];
+            $letters = 'A';
+            $count = 0;
+            echo "<table class='coordinate-grid'>";
+            for ($r = 0; $r <= $grid_size; $r++){
+                echo "<tr>";
+
+                for ($c = 0; $c <= $grid_size; $c++){
+                    echo "<td>";
+
+                    if ($r == 0 && $c == 0){
+                        echo "";
+                    }
+                    elseif ($r == 0 && $c == 1){
+                        echo $letters;
+                    }
+                    elseif ($r == 0){
+                        echo ++$letters;
+                    }
+                    elseif ($c == 0){
+                        echo $r;
+                    }
+                    else{
+                        echo "";
+                    }
+
+                    echo " </td>";
+                }
+
+                echo "</tr>";
+            }
+
+            echo "</table>";
+        }
     }
+        
     ?>
 
     <footer>
