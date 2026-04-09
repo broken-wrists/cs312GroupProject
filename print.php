@@ -60,6 +60,7 @@
         ?>
 
         <footer>
+            <p>Hueflutter Inc.</p>
         </footer>
     </body>
 </html>

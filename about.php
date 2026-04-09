@@ -19,6 +19,7 @@
         </nav>
     </header>
 
+    <div class="box">
     <div>
         <h2>Anna</h2>
         <img src="img/Anna.jpg" alt="Anna snowboarding" width="300" height="400">
@@ -45,9 +46,10 @@
         <p>Computer Science student at CSU with a passion for all things tech. Member of Devnet, Hashdump and OpenOrbit
             clubs at CSU.</p>
     </div>
+</div>
 
     <footer>
-
+        <p>Hueflutter Inc.</p>
     </footer>
 </body>
 

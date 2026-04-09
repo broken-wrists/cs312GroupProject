@@ -18,8 +18,13 @@
                 <a href="color.php">Color</a> 
             </nav>
         </header>
-        
-        <p> Welcome to Hueflutter! Your go to color coordinator professionals. </p>
 
+        <div class="box">
+            <p> Welcome to Hueflutter! Your go to color coordinator professionals. </p>
+        </div>
+
+        <footer>
+            <p>Hueflutter Inc.</p>
+        </footer>
     </body>
 </html>

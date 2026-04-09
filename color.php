@@ -24,6 +24,8 @@
         </nav>
     </header>
 
+    <div class="box">
+
     <!-- 4.2 Input Validation -->
     <?php
     $grid_size = 0;
@@ -38,13 +40,13 @@
         $valid_color = false;
 
         if (!is_numeric($grid_size) || $grid_size < 1 || $grid_size > 26) {
-            echo "<p>Error: Rows and Columns cannot be less than 1 or more than 26.</p>";
+            echo "<p class='error'>Error: Rows and Columns cannot be less than 1 or more than 26.</p>";
         } else {
             $valid_grid = true;
         }
 
         if (!is_numeric($num_colors) || $num_colors < 1 || $num_colors > 10) {
-            echo "<p>Error: Number Of Colors cannot be less than 1 or more than 10.</p>";
+            echo "<p class='error'>Error: Number Of Colors cannot be less than 1 or more than 10.</p>";
         } else {
             $valid_color = true;
         }
@@ -75,7 +77,7 @@
     $colorOptions = array("Red", "Orange", "Yellow", "Green", "Blue", "Purple", "Grey", "Brown", "Black", "Teal");
 
 
-    if (isset($_POST['generate'])) {
+    if (isset($_POST['generate']) && $valid) {
         $num_colors = $_POST['numColors'];
 
         echo "<table class='color-table'>";
@@ -145,11 +147,13 @@
         <input type="hidden" name="grid_size" value="<?=$grid_size?>"/>
         <input type="submit" value="View Printable Version">
     </form>
+    </div>
 
     <footer>
+        <p>Hueflutter Inc.</p>
     </footer>
     <script type="text/javascript" src="color.js"></script>
-
+    
 </body>
 
 </html>
