@@ -14,7 +14,7 @@
 <body>
 
     <header>
-        <img src="img/Hueflutter.png" alt="company logo" class="logo">
+        <img src="img/Hueflutter.png" alt="company logo" class="logo" width="100" height="100">
         <h1> Color Coordinator</h1>
 
         <nav>
@@ -24,6 +24,7 @@
         </nav>
     </header>
 
+    <!-- 4.2 Input Validation -->
     <?php
     $grid_size = 0;
     $num_colors = 0;

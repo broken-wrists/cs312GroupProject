@@ -10,7 +10,7 @@
     <body>
 
         <header>
-            <img src="img/Hueflutter.png" alt="Company Logo" class="logo">
+            <img src="img/Hueflutter.png" alt="Company Logo" class="logo" width="100" height="100">
             <h1>Hueflutter</h1>
             <nav>
                 <a href="index.php">Home</a> |

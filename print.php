@@ -12,7 +12,7 @@
             <form action="color.php" method="get">
                 <input type="submit" value="Back to Color Coordinator">
             </form>
-            <img src="img/Hueflutter.png" alt="company logo" class="gray">
+            <img src="img/Hueflutter.png" alt="company logo" class="gray" width="100" height="100">
             <h1>Hueflutter</h1>
         </header>
 
