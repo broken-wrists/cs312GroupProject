@@ -14,6 +14,7 @@
 <body>
 
     <header>
+        <img src="img/Hueflutter.png" alt="company logo" class="logo">
         <h1> Color Coordinator</h1>
 
         <nav>
@@ -137,6 +138,12 @@
     }
         
     ?>
+
+    <form action="print.php" method="post">
+        <input type="hidden" name="num_colors" value="<?=$num_colors?>"/>
+        <input type="hidden" name="grid_size" value="<?=$grid_size?>"/>
+        <input type="submit" value="View Printable Version">
+    </form>
 
     <footer>
     </footer>

@@ -9,6 +9,7 @@
 
 <body>
     <header>
+        <img src="img/Hueflutter.png" alt="company logo" class="logo">
         <h1>About Page</h1>
 
         <nav>
