@@ -116,7 +116,7 @@ select {
 	background-color: pink;
 }
 
-.grayscale {
+#grayscale {
 	filter: grayscale(100%);
 }
 

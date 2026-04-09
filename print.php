@@ -1,13 +1,13 @@
 <!DOCTYPE html>
-<html>
-    <head class="grayscale">
+<html id="grayscale">
+    <head>
         <link rel="stylesheet" type="text/css" href="style.css">
         <meta name="author" content="Group 19">
         <meta name="description" content="print page">
         <meta name="keywords" contents="HTML, php, css">
         <title>Print Page</title>
     </head>
-    <body class="grayscale">
+    <body>
         <header>
             <form action="color.php" method="get">
                 <input type="submit" value="Back to Color Coordinator">
