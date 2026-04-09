@@ -1,13 +1,13 @@
 <!DOCTYPE html>
-<html>
-    <head class="grayscale">
+<html id="grayscale">
+    <head>
         <link rel="stylesheet" type="text/css" href="style.css">
         <meta name="author" content="Group 19">
         <meta name="description" content="print page">
         <meta name="keywords" contents="HTML, php, css">
         <title>Print Page</title>
     </head>
-    <body class="grayscale">
+    <body>
         <header>
             <img src="img/Hueflutter.png" alt="company logo" class="gray" width="100" height="100">
             <h1>Hueflutter</h1>

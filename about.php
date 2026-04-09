@@ -22,13 +22,14 @@
     <div class="box">
     <div>
         <h2>Anna</h2>
-        <img src="img/Anna.jpg" alt="Anna snowboarding" width="300" height="400">
+        <img src="img/Anna.jpg" alt="Anna Image" width="350" height="400">
         <p>Senior in computer science with a minor in mathematics at CSU. A few of my hobbies include snowboarding,
             gaming, dnd, and boating.</p>
     </div>
 
     <div>
         <h2>Jennifer</h2>
+        <img src="img/JennyPic.jpg" alt="Jennifer Image" height="350" width="400">
         <p>I am from Colorado and study computer science at CSU. In my free time, I enjoy: rock climbing, camping, and
             hanging out with my cats</p>
     </div>
@@ -42,7 +43,7 @@
 
     <div>
         <h2>Jim</h2>
-        <img src="img/Jimspic.jpg" alt="Jims Image" height="350" width="350">
+        <img src="img/JimsPic.png" alt="Jims Image" height="350" width="400">
         <p>Computer Science student at CSU with a passion for all things tech. Member of Devnet, Hashdump and OpenOrbit
             clubs at CSU.</p>
     </div>

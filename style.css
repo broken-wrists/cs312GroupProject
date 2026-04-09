@@ -119,7 +119,7 @@ select {
 	color: var(--light-blue);
 }
 
-.grayscale {
+#grayscale {
 	filter: grayscale(100%);
 }
 
