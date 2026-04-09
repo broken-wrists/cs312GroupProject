@@ -108,12 +108,15 @@ select {
 	border: 1px solid black;
 }
 
+/* Color Contrast Ratio: 7.21:1 */
 .coordinate-grid tr:first-child {
-	background-color: pink;
+	background-color: var(--purple);
+	color: var(--light-blue);
 }
 
 .coordinate-grid td:first-child {
-	background-color: pink;
+	background-color: var(--purple);
+	color: var(--light-blue);
 }
 
 .grayscale {
