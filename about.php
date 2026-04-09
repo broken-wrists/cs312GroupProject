@@ -41,6 +41,7 @@
 
     <div>
         <h2>Jim</h2>
+        <img src="img/Jimspic.jpg" alt="Jims Image" height="350" width="350">
         <p>Computer Science student at CSU with a passion for all things tech. Member of Devnet, Hashdump and OpenOrbit
             clubs at CSU.</p>
     </div>
