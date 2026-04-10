@@ -1,4 +1,4 @@
-console.log('gi');
+//4.3 update selected colors from dropdown
 document.addEventListener('DOMContentLoaded', function () {
 	const dropdowns = document.querySelectorAll('.color-dropdown');
 	const messageBox = document.getElementById('color-message');
@@ -38,7 +38,6 @@ document.addEventListener('DOMContentLoaded', function () {
 				const row = this.closest('tr');
 				const previewCell = row.querySelector('.preview');
 
-				previewCell.textContent = this.value;
 				previewCell.style.backgroundColor = this.value.toLowerCase();
 			}
 		});
