@@ -17,10 +17,12 @@
         </header>
 
         <?php
-        if (isset($_POST['num_colors'])){
-            $num_colors = $_POST['num_colors'];
-            // Add color selection table
-        }
+        if (isset($_POST['selected_colors'])) {
+        $colorOptions = $_POST['selected_colors'];
+        $num_colors = count($colorOptions);
+
+        include 'tables/colorTable.php';
+    }
 
         if (isset($_POST['grid_size'])){
             $grid_size = (int) $_POST['grid_size'];
