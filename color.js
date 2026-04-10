@@ -1,4 +1,4 @@
-console.log('gi');
+//4.3 update selected colors from dropdown
 document.addEventListener('DOMContentLoaded', function () {
 	const dropdowns = document.querySelectorAll('.color-dropdown');
 	const messageBox = document.getElementById('color-message');
