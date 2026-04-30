@@ -110,9 +110,6 @@
                         } elseif ($c == 0) {
                             echo $r;
                         } else {
-
-                            // 1.3 Coordinate Tracking
-                            $coordinate = chr($c + 64) . $r;
                             echo "";
                         }
 

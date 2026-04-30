@@ -1,5 +1,8 @@
 //4.3 update selected colors from dropdown
 document.addEventListener('DOMContentLoaded', function () {
+	// 1.3 Coordinate Tracking
+	let coordinates = {};
+
 	const dropdowns = document.querySelectorAll('.color-dropdown');
 	const messageBox = document.getElementById('color-message');
 
@@ -59,6 +62,35 @@ document.addEventListener('DOMContentLoaded', function () {
 			const selectedColor = selectedDropdown.value;
 
 			cell.style.backgroundColor = selectedColor.toLowerCase();
+			
+			// 1.3 Coordinate Tracking
+			const colCoord = String.fromCharCode(64 + cell.cellIndex);
+			const rowCoord = cell.parentElement.rowIndex;
+			const coordinate = colCoord + rowCoord;
+
+			if (!coordinates[selectedColor]) {
+				coordinates[selectedColor] = [];
+			}
+
+			if (!coordinates[selectedColor].includes(coordinate)) {
+				coordinates[selectedColor].push(coordinate);
+			}
+
+			updateTable();
 		});
 	});
+
+	function updateTable() {
+		const dropdowns = document.querySelectorAll('.color-dropdown');
+
+		dropdowns.forEach((dd, i) => {
+			const color = dd.value;
+			const coords = coordinates[color] || [];
+
+			const previewCell = document.querySelector(`#coords-${i}`);
+			if (previewCell) {
+				previewCell.textContent = coords.join(", ");
+			}
+		});
+	}
 });
