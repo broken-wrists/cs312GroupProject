@@ -74,6 +74,7 @@ document.addEventListener('DOMContentLoaded', function () {
 
 			if (!coordinates[selectedColor].includes(coordinate)) {
 				coordinates[selectedColor].push(coordinate);
+				coordinates[selectedColor].sort((a, b) => a.localeCompare(b, undefined, { numeric: true }));
 			}
 
 			updateTable();
