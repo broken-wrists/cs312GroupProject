@@ -43,4 +43,22 @@ document.addEventListener('DOMContentLoaded', function () {
 			}
 		});
 	});
+
+	// 1.2 Painting cells in the grid
+	const gridCells = document.querySelectorAll('.coordinate-grid td');
+
+	gridCells.forEach(function (cell) {
+		cell.addEventListener('click', function () {
+			if (cell.cellIndex == 0 || cell.parentElement.rowIndex == 0) {
+				return;
+			}
+
+			const selectedRadio = document.querySelector("input[name='active_color']:checked");
+			const selectedRow = selectedRadio.value;
+			const selectedDropdown = document.querySelectorAll('.color-dropdown')[selectedRow];
+			const selectedColor = selectedDropdown.value;
+
+			cell.style.backgroundColor = selectedColor.toLowerCase();
+		});
+	});
 });
