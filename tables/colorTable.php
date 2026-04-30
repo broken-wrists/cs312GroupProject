@@ -6,6 +6,15 @@ echo "<table class='color-table'>";
 for ($i = 0; $i < $num_colors; $i++) {
     echo "<tr>";
 
+    // radio button for active color
+    echo "<td style='width:unset;'>";
+    if ($i == 0) {
+        echo "<input type='radio' name='active_color' value='$i' checked>";
+    } else {
+        echo "<input type='radio' name='active_color' value='$i'>";
+    }
+    echo "</td>";
+
     echo "<td>";
     echo "<select class='color-dropdown' name='selected_colors[]'>";
 

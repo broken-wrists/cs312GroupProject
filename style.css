@@ -1,9 +1,9 @@
 :root {
-	--red: #A20119;
-	--light-blue: #BDE0EA;
-	--yellow-orange: #F9D37B;
-	--yellow-green: #CFFBA2;
-	--purple: #6308A1;
+	--red: #a20119;
+	--light-blue: #bde0ea;
+	--yellow-orange: #f9d37b;
+	--yellow-green: #cffba2;
+	--purple: #6308a1;
 }
 
 body {
@@ -14,13 +14,13 @@ body {
 
 /* Color Contrast Ratio: 7.21:1 */
 header {
-    background-color: var(--purple);
+	background-color: var(--purple);
 	color: var(--light-blue);
-    padding: 16px 24px;
-    display: flex;
-    align-items: center;
-    gap: 16px;
-    flex-wrap: wrap;
+	padding: 16px 24px;
+	display: flex;
+	align-items: center;
+	gap: 16px;
+	flex-wrap: wrap;
 }
 
 .logo {
@@ -30,41 +30,41 @@ header {
 
 /* Nav Color Contrast Ratio: 7.21:1 */
 nav {
-    background-color: var(--light-blue);
-    padding: 10px 24px;
+	background-color: var(--light-blue);
+	padding: 10px 24px;
 }
 
 nav a {
-    color: var(--purple);
-    text-decoration: none;
-    font-weight: bold;
-    margin-right: 10px;
+	color: var(--purple);
+	text-decoration: none;
+	font-weight: bold;
+	margin-right: 10px;
 }
 
 /* Color Contrast Ratio: 7.03:1 */
 .box {
-    background-color: var(--yellow-green);
-    padding: 16px;
-    color: var(--red);
+	background-color: var(--yellow-green);
+	padding: 16px;
+	color: var(--red);
 }
 
 .box h2 {
-    color: var(--indigo);
+	color: var(--indigo);
 }
 
 /* Color Contrast Ratio: 7.21:1 */
 footer {
-    background-color: var(--purple);
-    color: var(--light-blue);
-    text-align: center;
-    padding: 15px;
-    font-size: 15px;
+	background-color: var(--purple);
+	color: var(--light-blue);
+	text-align: center;
+	padding: 15px;
+	font-size: 15px;
 }
 
 /* Color Contrast Ratio: 17.97:1 */
 .error {
-    color: #000000;
-    font-weight: bold;
+	color: #000000;
+	font-weight: bold;
 }
 
 .color-table {
@@ -74,10 +74,6 @@ footer {
 
 .color-table td {
 	border: 1px solid black;
-}
-
-.color-table td:first-child {
-	width: 20%;
 }
 
 .color-table td:last-child {
@@ -123,7 +119,8 @@ select {
 	filter: grayscale(100%);
 }
 
-.gray { /* turns image gray */
+.gray {
+	/* turns image gray */
 	width: 200px;
 	height: 200px;
 	filter: grayscale(100%);
