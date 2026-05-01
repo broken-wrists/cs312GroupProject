@@ -36,22 +36,28 @@ document.addEventListener('DOMContentLoaded', function () {
 				this.value = this.dataset.previousValue;
 				showMessage('That color is already in use. Please choose a different one.');
 			} else {
+				const oldColor = this.dataset.previousValue;
 				this.dataset.previousValue = this.value;
-				const oldColor = this.dataset.previousValue; 
 
 				const row = this.closest('tr');
 				const previewCell = row.querySelector('.preview');
 
-				previewCell.textContent = this.value;
 				previewCell.style.backgroundColor = this.value.toLowerCase();
 
 				const gridCells = document.querySelectorAll('.coordinate-grid td');
                 gridCells.forEach(function(cell){
-                    if(cell.dataset.paintedColor === oldColor) {
+                    if(cell.dataset.paintedColor == oldColor) {
                         cell.dataset.paintedColor = newValue;
                         cell.style.backgroundColor = newValue.toLowerCase();
                     }
                 });
+
+				if (coordinates[oldColor]) {
+                    coordinates[newValue] = coordinates[oldColor];
+                    delete coordinates[oldColor];
+                }
+
+				updateTable();
 			}
 		});
 	});
@@ -71,7 +77,7 @@ document.addEventListener('DOMContentLoaded', function () {
 			const selectedColor = selectedDropdown.value;
 
 			cell.style.backgroundColor = selectedColor.toLowerCase();
-			cell.dataset.paintedColor = selectedColor.toLowerCase();
+			cell.dataset.paintedColor = selectedColor;
 
 			// 1.3 Coordinate Tracking
 			const colCoord = String.fromCharCode(64 + cell.cellIndex);
