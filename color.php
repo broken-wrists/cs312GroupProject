@@ -86,6 +86,8 @@
                 <input type="hidden" name="grid_size" value="<?= $grid_size ?>">
 
                 <?php
+                //2.1 Adjust style for print page
+                $isPrint = false;
                 // Put this table inside the print form so the current selected dropdown values get sent to print.php
                 // 4.3 Top Table: Color Grid
                 include 'tables/colorTable.php';
