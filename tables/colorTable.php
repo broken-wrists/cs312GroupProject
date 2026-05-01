@@ -35,7 +35,7 @@ for ($i = 0; $i < $num_colors; $i++) {
     $currentColor = $colorOptions[$i];
 
     // 1.3 Coordinate Tracking
-    echo "<td id='coords-$i' class='preview' style='background-color:" .strtolower($currentColor) . ";'></td>";
+    echo "<td id='coords-$i' class='preview outline-shadow' style='background-color:" . strtolower($currentColor) . ";'></td>";
 
     echo "</tr>";
 }
