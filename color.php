@@ -84,8 +84,14 @@
             <form action="print.php" method="post">
                 <input type="hidden" name="num_colors" value="<?= $num_colors ?>">
                 <input type="hidden" name="grid_size" value="<?= $grid_size ?>">
+                <input type="hidden" name="coord_data" id="coord_data">
 
                 <?php
+
+                // 2.4
+                $colorOptions = array("Red", "Orange", "Yellow", "Green", "Blue", "Purple", "Grey", "Brown", "Black", "Teal");
+                $colorOptions = array_slice($colorOptions, 0, $num_colors);
+
                 //2.1 Adjust style for print page
                 $isPrint = false;
                 // Put this table inside the print form so the current selected dropdown values get sent to print.php

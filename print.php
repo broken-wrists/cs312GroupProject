@@ -22,9 +22,18 @@
     //2.1 For Print view changes: radio buttons, dropdowns, text
     $isPrint = true;
 
+    // 2.4
+    $coords = [];
+    if (isset($_POST['coord_data'])) {
+        $coords = json_decode($_POST['coord_data'], true);
+    }
+
     if (isset($_POST['selected_colors'])) {
         $colorOptions = $_POST['selected_colors'];
         $num_colors = count($colorOptions);
+        
+        // 2.4
+        $groups = $coords;
 
         include 'tables/colorTable.php';
     }
