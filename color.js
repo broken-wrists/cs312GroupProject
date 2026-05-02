@@ -36,8 +36,9 @@ document.addEventListener('DOMContentLoaded', function () {
 				this.value = this.dataset.previousValue;
 				showMessage('That color is already in use. Please choose a different one.');
 			} else {
-				this.dataset.previousValue = this.value;
 				const oldColor = this.dataset.previousValue;
+				const newColor = this.value;
+				this.dataset.previousValue = newColor;
 
 				const row = this.closest('tr');
 				const previewCell = row.querySelector('.preview');
@@ -47,8 +48,8 @@ document.addEventListener('DOMContentLoaded', function () {
 				const gridCells = document.querySelectorAll('.coordinate-grid td');
 				gridCells.forEach(function (cell) {
 					if (cell.dataset.paintedColor === oldColor) {
-						cell.dataset.paintedColor = newValue;
-						cell.style.backgroundColor = newValue.toLowerCase();
+						cell.dataset.paintedColor = newColor;
+						cell.style.backgroundColor = newColor.toLowerCase();
 					}
 				});
 			}
@@ -103,4 +104,9 @@ document.addEventListener('DOMContentLoaded', function () {
 			}
 		});
 	}
+
+	const form = document.querySelector('form[action="print.php"]');
+	form.addEventListener('submit', function () {
+		document.getElementById('coord_data').value = JSON.stringify(coordinates);
+	});
 });

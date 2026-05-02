@@ -57,8 +57,12 @@ for ($i = 0; $i < $num_colors; $i++) {
     echo "</td>";
 
     // 1.3 Coordinate Tracking
-    echo "<td id='coords-$i' class='preview outline-shadow' style='background-color:" . strtolower($currentColor) . ";'></td>";
-
+    echo "<td id='coords-$i' class='preview outline-shadow' style='background-color:" . strtolower($currentColor) . ";'>";
+    if ($isPrint && isset($groups[$currentColor])) {
+        echo implode(", ", $groups[$currentColor]);
+    }
+    echo "</td>";
+    
     echo "</tr>";
 }
 
