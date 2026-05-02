@@ -115,6 +115,14 @@ select {
 	color: var(--light-blue);
 }
 
+.page {
+	width: 8.5in;
+    height: 11in;
+    margin: 0 auto;
+    padding: 0.5in;
+    overflow: hidden;
+}
+
 #grayscale {
 	filter: grayscale(100%);
 }

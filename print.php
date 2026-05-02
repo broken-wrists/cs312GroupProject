@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html id="grayscale">
+<html id="grayscale" class="page">
 
 <head>
     <link rel="stylesheet" type="text/css" href="style.css">
