@@ -28,6 +28,17 @@
 
         <!-- 4.2 Input Validation -->
         <?php
+        //3.5 pulling colors from db
+        require 'db.php';
+
+        $db_colors = [];
+        $db_result = $conn->query("SELECT name FROM colors ORDER BY name");
+
+        while ($db_row = $db_result->fetch_assoc()) {
+           $db_colors[] = $db_row['name'];
+        }
+
+        $max_colors = count($db_colors);
         $grid_size = 0;
         $num_colors = 0;
         $valid = false;
@@ -45,8 +56,9 @@
                 $valid_grid = true;
             }
 
-            if (!is_numeric($num_colors) || $num_colors < 1 || $num_colors > 10) {
-                echo "<p class='error'>Error: Number Of Colors cannot be less than 1 or more than 10.</p>";
+            //3.5 change from 10 to $max_colors 
+            if (!is_numeric($num_colors) || $num_colors < 1 || $num_colors > $max_colors) {
+                echo "<p class='error'>Error: Number Of Colors cannot be less than 1 or more than $max_colors.</p>";
             } else {
                 $valid_color = true;
             }
@@ -64,8 +76,10 @@
             <input type="number" name="grid_size" id="gridsize">
             <br><br>
 
-            <label for="num_colors"> Number Of Colors (1-10): </label>
-            <input type="number" name="numColors" id="numColors">
+
+            <!-- 3.5 label and max dynamic -->
+            <label for="num_colors"> Number Of Colors (1-<?= $max_colors ?>): </label>
+            <input type="number" name="numColors" id="numColors" max="<?= $max_colors ?>">
             <br><br>
 
             <button type="submit" name="generate">Generate</button>
@@ -74,7 +88,8 @@
 
         <?php
         $num_colors = 0;
-        $colorOptions = array("Red", "Orange", "Yellow", "Green", "Blue", "Purple", "Grey", "Brown", "Black", "Teal");
+        //3.5 use db colors
+        $colorOptions = $db_colors;
 
         if (isset($_POST['generate']) && $valid) {
             $num_colors = (int) $_POST['numColors'];
@@ -89,7 +104,7 @@
                 <?php
 
                 // 2.4
-                $colorOptions = array("Red", "Orange", "Yellow", "Green", "Blue", "Purple", "Grey", "Brown", "Black", "Teal");
+                //using db colors now $colorOptions = array("Red", "Orange", "Yellow", "Green", "Blue", "Purple", "Grey", "Brown", "Black", "Teal");
                 $colorOptions = array_slice($colorOptions, 0, $num_colors);
 
                 //2.1 Adjust style for print page
