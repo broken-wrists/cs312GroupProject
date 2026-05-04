@@ -20,7 +20,8 @@
         <nav>
             <a href="index.php">Home</a> |
             <a href="about.php">About</a> |
-            <a href="color.php">Color</a>
+            <a href="color.php">Color</a> |
+            <a href="colors.php">Color Selection</a>
         </nav>
     </header>
 

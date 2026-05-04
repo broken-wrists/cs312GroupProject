@@ -52,6 +52,13 @@ document.addEventListener('DOMContentLoaded', function () {
 						cell.style.backgroundColor = newColor.toLowerCase();
 					}
 				});
+
+				if (coordinates[oldColor]) {
+                    coordinates[newValue] = coordinates[oldColor];
+                    delete coordinates[oldColor];
+                }
+
+				updateTable();
 			}
 		});
 	});
