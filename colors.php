@@ -1,7 +1,35 @@
 <?php
 require 'db.php';
 $message = "";
+// 3.2 Add a color
+if (isset($_POST['add_color'])) {
+    $name = trim($_POST['color_name']);
+    $hex_value = trim($_POST['hex_value']);
 
+    if ($name == "" || $hex_value == "") {
+        $message = "<p class='error'>Error: Color name and hex value are required.</p>";
+    } else {
+        if ($hex_value[0] != "#") {
+            $hex_value = "#" . $hex_value;
+        }
+
+        if (!preg_match("/^#[0-9A-Fa-f]{6}$/", $hex_value)) {
+            $message = "<p class='error'>Error: Hex value must be in the format #RRGGBB.</p>";
+        } else {
+            $name = $conn->real_escape_string($name);
+            $hex_value = $conn->real_escape_string($hex_value);
+
+            $sql = "INSERT INTO colors (name, hex_value) VALUES ('$name', '$hex_value')";
+
+            if ($conn->query($sql)) {
+                $message = "<p>Color added successfully.</p>";
+            } else {
+                $message = "<p class='error'>Error: Color name or hex value already exists.</p>";
+            }
+        }
+    }
+}
+//3.3 Delete a color
 if (isset($_POST['confirm_delete'])) {
     $result = $conn->query("SELECT COUNT(*) AS total FROM colors");
     $row = $result->fetch_assoc();
@@ -10,9 +38,9 @@ if (isset($_POST['confirm_delete'])) {
     if ($total_colors <= 2) {
         $message = "<p class='error'>Error: Cannot delete color. There must be at least 2 colors left.</p>";
     } else {
-        $id = (int)$_POST['color_id']; 
+        $id = (int) $_POST['color_id'];
         $conn->query("DELETE FROM colors WHERE id = $id");
-        
+
         $message = "<p>Color deleted successfully.</p>";
     }
 }
@@ -20,6 +48,7 @@ if (isset($_POST['confirm_delete'])) {
 
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="utf-8">
     <title>Color Selection</title>
@@ -47,14 +76,26 @@ if (isset($_POST['confirm_delete'])) {
         <div>
             <h3>Add a Color</h3>
             <hr>
-            <!-- Add a color functionality goes here -->
+            <form method="POST" action="colors.php">
+                <p>
+                    Color Name:
+                    <input type="text" name="color_name" required>
+                </p>
+
+                <p>
+                    Hex Value:
+                    <input type="text" name="hex_value" placeholder="#FF0000" required>
+                </p>
+
+                <input type="submit" name="add_color" value="Add Color">
+            </form>
         </div>
 
         <div>
             <h3>Edit a Color</h3>
             <hr>
             <!-- Edit a color functionality goes here -->
-        </div>      
+        </div>
 
         <div>
             <h3>Delete a Color</h3>
@@ -77,7 +118,7 @@ if (isset($_POST['confirm_delete'])) {
                 echo "<option value=''>-- Choose a color --</option>";
 
                 $result = $conn->query("SELECT * FROM colors ORDER BY name");
-                
+
                 while ($row = $result->fetch_assoc()) {
                     echo "<option value='" . $row['id'] . "'>" . $row['name'] . "</option>";
                 }
@@ -100,7 +141,7 @@ if (isset($_POST['confirm_delete'])) {
             </tr>
             <?php
             $result = $conn->query("SELECT * FROM colors ORDER BY name");
-            
+
             while ($row = $result->fetch_assoc()) {
                 echo "<tr>";
                 echo "<td>" . $row['name'] . "</td>";
@@ -117,4 +158,5 @@ if (isset($_POST['confirm_delete'])) {
         <p>Hueflutter Inc.</p>
     </footer>
 </body>
+
 </html>
